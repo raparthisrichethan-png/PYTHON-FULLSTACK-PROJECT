@@ -24,7 +24,7 @@ This project is ideal for individuals or small businesses to maintain an organiz
 PACKAGE DELIVERY TRACKER/
 |
 |---SRC/   #core application logic
-|    |---logic.py    # Business logic and package operations
+|    |---logic.py    # Business logic and package 
 operations
 |    |__db.py    # Database connection and queries
 |

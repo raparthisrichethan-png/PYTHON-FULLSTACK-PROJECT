@@ -10,26 +10,30 @@ key = os.getenv("SUPABASE_KEY")
 
 supabase: Client = create_client(url, key)
 
-# Create a new packages
-def create_package(tracking_number, courier, status, expected_delivery, origin, destination, notes):
-    return supabase.table("packages").insert({
-        "tracking_number": tracking_number,
-        "courier": courier,
-        "status": status,
-        "expected_delivery": expected_delivery,
-        "origin": origin,
-        "destination": destination,
-        "notes": notes
-    }).execute()
+class DatabaseManager:
+    def __init__(self):
+        self.supabase = supabase
 
-# Get all packages
-def get_packages():
-    return supabase.table("packages").select("*").execute()
+    # Create a new package
+    def create_package(self, tracking_number, courier, status, expected_delivery, origin, destination, notes):
+        return self.supabase.table("packages").insert({
+            "tracking_number": tracking_number,
+            "courier": courier,
+            "status": status,
+            "expected_delivery": expected_delivery,
+            "origin": origin,
+            "destination": destination,
+            "notes": notes
+        }).execute()
 
-# Update a package (flexible)
-def update_package(id, updates):
-    return supabase.table("packages").update(updates).eq("id", id).execute()
+    # Get all packages
+    def get_packages(self):
+        return self.supabase.table("packages").select("*").execute()
 
-# Delete a package
-def delete_package(id):
-    return supabase.table("packages").delete().eq("id", id).execute()
+    # Update a package (flexible)
+    def update_package(self, id, updates):
+        return self.supabase.table("packages").update(updates).eq("id", id).execute()
+
+    # Delete a package
+    def delete_package(self, id):
+        return self.supabase.table("packages").delete().eq("id", id).execute()
