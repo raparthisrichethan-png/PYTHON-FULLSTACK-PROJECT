@@ -1,4 +1,4 @@
-# package delivery tracker
+# Package Delivery Tracker
 
 The Package Delivery Tracker is a software application designed to help users efficiently track and manage the status of packages during shipment. It allows users to log package details such as tracking number, courier service, origin, destination, and expected delivery dates.
 This project is ideal for individuals or small businesses to maintain an organized record of all outgoing and incoming parcels, helping to avoid lost or delayed shipments. Built with Python and SQL, it emphasizes database management, CRUD operations, and user-friendly data handling.
@@ -22,7 +22,6 @@ This project is ideal for individuals or small businesses to maintain an organiz
 ##  Project Structure
 
 PACKAGE DELIVERY TRACKER/
-|
 |
 |---SRC/   #core application logic
 |    |---logic.py    # Business logic and package operations
@@ -100,6 +99,7 @@ The app will open in your browser at 'https://localhost:8000'
 
 ## Fast api
 cd API
+python main.py
 The api will will be available at 'https://localhost:8050'
 
 ## How to use
