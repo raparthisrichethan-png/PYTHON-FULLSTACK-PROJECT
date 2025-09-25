@@ -10,7 +10,7 @@ key = os.getenv("SUPABASE_KEY")
 
 supabase: Client = create_client(url, key)
 
-# Create a new package
+# Create a new packages
 def create_package(tracking_number, courier, status, expected_delivery, origin, destination, notes):
     return supabase.table("packages").insert({
         "tracking_number": tracking_number,
